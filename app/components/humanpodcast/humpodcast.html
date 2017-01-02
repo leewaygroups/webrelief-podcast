@@ -1,0 +1,22 @@
+<div flex layout="row">  
+    <md-content flex id="content" class="grid-list">
+        <div flex ng-cloak>
+            <md-grid-list
+                    md-cols="1" md-cols-sm="2" md-cols-md="3" md-cols-gt-md="6"
+                    md-row-height-gt-md="1:1" md-row-height="4:3"
+                    md-gutter="20px" md-gutter-gt-sm="20px">
+
+                <md-grid-tile ng-repeat="podcast in podcasts"
+                            md-rowspan="{{podcast.span.row}}"
+                            md-colspan="{{podcast.span.col}}"
+                            md-colspan-sm="1"
+                            md-colspan-xs="1"
+                            ng-class="{{podcast.background}}"  ng-click="showpodcast(podcast)">
+                <md-icon md-svg-icon="{{podcast.icon}}" layout-fill></md-icon>
+                <md-grid-tile-footer class="tile-title"><h3>{{podcast.title}}</h3></md-grid-tile-footer>
+                 <md-grid-tile-footer class="short-desc"><h4>{{podcast.shortDesc}}</h4></md-grid-tile-footer>
+                </md-grid-tile>
+            </md-grid-list>
+        </div>
+    </md-content>
+</div>
